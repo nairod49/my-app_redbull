@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { ResultatCourse } from './resultat-course.model'; // Importez le modèle
 
 @Component({
   selector: 'app-resultats-course',
@@ -14,6 +15,8 @@ export class ResultatsCourseComponent implements OnInit {
   selectedGrandPrix: string = ''; // Grand Prix sélectionné par défaut
   resultats: any[] = []; // Tableau pour stocker les résultats de course
 
+  resultatCourse: ResultatCourse[] = []; // Utilisez le modèle pour stocker les résultats de course
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -21,50 +24,22 @@ export class ResultatsCourseComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-     // Récupération des années disponibles depuis l'API
-     this.getAnneesDisponibles();
 
-     // Récupération des Grands Prix disponibles depuis l'API
-     this.getGrandsPrixDisponibles();
+ // Récupérez la liste des résultats de course depuis votre API Node.js
+ this.http.get<ResultatCourse[]>('http://localhost:3000/resultatscourse').subscribe(data => {
+  this.resultatCourse = data;
+});
+
+// Récupérez la liste des années et des Grands Prix depuis votre API Node.js
+this.http.get<number[]>('http://localhost:3000/resultatscourse/annees').subscribe(data => {
+  this.annee = data;
+});
+this.http.get<string[]>('http://localhost:3000/resultatscourse/grandsprix').subscribe(data => {
+  this.grandsPrix = data;
+});
+
+ 
   }
 
-  getAnneesDisponibles(): void {
-    this.http.get<number[]>('http://localhost:3000/annees').subscribe((data) => {
-      this.annee = data;
-    });
-  }
-
-  getGrandsPrixDisponibles(): void {
-    this.http.get<string[]>('http://localhost:3000/grandsprix').subscribe((data) => {
-      this.grandsPrix = data;
-    });
-  }
-
-  onGrandPrixChange(event: any) {
-    this.selectedGrandPrix = event.target.value;
-    // Vous pouvez effectuer des actions lorsque la sélection du Grand Prix change ici
-  }
-
-  onAnneeChange(event: any) {
-    this.selectedAnnee = event.target.value;
-    // Vous pouvez effectuer des actions lorsque la sélection de l'année change ici
-  }
-
-  loadResultatCourse(): void {
-    if (this.selectedAnnee && this.selectedGrandPrix) {
-      if (this.selectedAnnee && this.selectedGrandPrix) {
-        // Utiliser l'année et le Grand Prix sélectionnés pour effectuer une requête GET vers votre backend
-        // et récupérer les résultats de course correspondants.
-        const params = new HttpParams()
-          .set('annee', this.selectedAnnee.toString())
-          .set('grandPrix', this.selectedGrandPrix);
   
-        this.http
-          .get<any[]>('http://localhost:3000/resultatscourse', { params })
-          .subscribe((data) => {
-            this.resultats = data;
-          });
-      }
-  }
-}
 }
