@@ -1,0 +1,59 @@
+.resultat-course {
+    background-color: #1F3F6E;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  .filtres {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  select {
+    padding: 5px;
+    border: 1px solid #D32828;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #1F3F6E;
+    cursor: pointer;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+  }
+  
+  th {
+    background-color: #D32828;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #fff;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #1F3F6E;
+  }
+  
+  tbody tr:hover {
+    background-color: #D32828;
+    color: white;
+  }
+  

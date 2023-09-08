@@ -1,0 +1,33 @@
+<div class="resultat-course">
+    <h2>Résultats de Course</h2>
+  
+    <div class="filtres">
+      <label for="annee">Année :</label>
+      <select id="annee" [(ngModel)]="selectedAnnee" (change)="onAnneeChange($event)">
+        <option *ngFor="let annees of annee" [value]="annees">{{ annees }}</option>
+      </select>
+  
+      <label for="grandPrix">Grand Prix :</label>
+      <select id="grandPrix" [(ngModel)]="selectedGrandPrix" (change)="onGrandPrixChange($event)">
+        <option *ngFor="let grandPrix of grandsPrix" [value]="grandPrix">{{ grandPrix }}</option>
+      </select>
+    </div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Pilote</th>
+          <th>Écurie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let resultat of resultats">
+          <td>{{ resultat.position }}</td>
+          <td>{{ resultat.pilote }}</td>
+          <td>{{ resultat.ecurie }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

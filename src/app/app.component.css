@@ -1,0 +1,43 @@
+/* Styles pour la barre de navigation */
+.navbar {
+    background-color: #333; /* Couleur de fond de la barre de navigation */
+    border-radius: 20px; /* Rayon des coins pour obtenir un effet arrondi */
+    padding: 10px 0; /* Espacement à l'intérieur de la barre de navigation (supprimez le padding horizontal) */
+    text-align: center; /* Centre le texte à l'intérieur de la barre de navigation */
+    margin: 34%;
+    margin-top: 10px;
+
+}
+  
+  /* Styles pour la liste du menu */
+  .menu {
+    list-style-type: none; /* Supprimer les puces de la liste */
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Centre le texte à l'intérieur de la liste */
+  }
+  
+  /* Styles pour les éléments du menu */
+  .menu-item {
+    margin-right: 20px; /* Espacement entre les éléments du menu */
+    min-width: 100px; /* Largeur minimale pour les éléments du menu */
+    display: inline-block; /* Afficher les éléments en ligne pour qu'ils s'adaptent à leur contenu */
+  }
+  
+  /* Styles pour les liens dans le menu */
+  .menu-item a {
+    text-decoration: none; /* Supprimer le soulignement des liens */
+    color: white; /* Couleur du texte des liens */
+    font-weight: bold; /* Gras pour le texte des liens */
+  }
+  
+  /* Style pour le lien actif */
+  .menu-item a.active {
+    color: yellow; /* Couleur du texte pour le lien actif (personnalisez selon vos préférences) */
+  }
+  
+  /* Style au survol des liens */
+  .menu-item a:hover {
+    text-decoration: underline; /* Soulignement du lien au survol */
+  }
+  
