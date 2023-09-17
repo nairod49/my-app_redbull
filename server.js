@@ -17,6 +17,8 @@ const app = express();
 const port = 3000;
 
 
+
+
 app.use(cors());
 
 // Middleware pour analyser les données de requête
@@ -25,21 +27,34 @@ app.use(bodyParser.json());
 
 app.get('/resultatscourse', async (req, res) => {
   try {
-    // Code pour récupérer les données de résultat de course depuis MongoDB
-    const resultats = await ResultatCourse.find(); // Supposons que vous utilisez Mongoose
+    const { annee, nom_grand_prix } = req.query;
 
-    // Renvoyer les données en tant que réponse JSON
+    // Vérifiez si les paramètres de requête "annee" et "grandPrix" sont présents.
+    if ( !nom_grand_prix) {
+      return res.status(400).json({ message: "Les paramètres 'annee' et 'nom_grand_prix' sont obligatoires." });
+    }
+
+    // Effectuez la recherche en fonction de l'année et du grand prix.
+    const resultats = await ResultatCourse.find({ nom_grand_prix });
+    
+    if (resultats.length === 0) {
+      return res.status(404).json({ message: "Aucun résultat trouvé pour ces critères." });
+    }
+
+    // Renvoyez les résultats en tant que réponse JSON.
     res.json(resultats);
   } catch (error) {
     console.error(error);
-    // Renvoyer une réponse d'erreur avec un code 500 (Internal Server Error)
-    res.status(500).json({ message: 'Une erreur s\'est produite lors de la récupération des résultats de course.' });
+    res.status(500).json({ message: 'Une erreur s\'est produite lors de la recherche des résultats de course.' });
   }
 });
+
 
 const resultatCourseRouter = require('./routes/resultatsCourse');
 app.use('/resultatscourse', resultatCourseRouter);
 
+const pilotesRoutes = require('./routes/pilotes.js');
+app.use('/pilotes', pilotesRoutes);
 
 // Démarrage du serveur
 app.listen(port, () => {

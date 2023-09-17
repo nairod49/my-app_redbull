@@ -1,59 +1,57 @@
+/* resultats-course.component.css */
+
+/* Style général pour la section des résultats de course */
 .resultat-course {
-    background-color: #1F3F6E;
-    padding: 20px;
-    color: white;
-    border-radius: 10px;
-  }
-  
-  h2 {
-    font-size: 24px;
-  }
-  
-  .filtres {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    margin-right: 10px;
-  }
-  
-  select {
-    padding: 5px;
-    border: 1px solid #D32828;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #1F3F6E;
-    cursor: pointer;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  
-  th, td {
-    text-align: left;
-    padding: 10px;
-    border-bottom: 1px solid #fff;
-  }
-  
-  th {
-    background-color: #D32828;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #fff;
-  }
-  
-  tbody tr:nth-child(odd) {
-    background-color: #1F3F6E;
-  }
-  
-  tbody tr:hover {
-    background-color: #D32828;
-    color: white;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  margin-top: -30%;
+}
+
+/* Style pour le titre de la section */
+.resultat-course h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Style pour la liste des résultats */
+.resultat-course ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style pour chaque élément de la liste */
+.resultat-course li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* Style pour le formulaire de sélection */
+.selection-form {
+  margin-bottom: 20px;
+}
+
+/* Style pour les libellés du formulaire */
+.selection-form label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Style pour les listes déroulantes */
+.selection-form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+}
+

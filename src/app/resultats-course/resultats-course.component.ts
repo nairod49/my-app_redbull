@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { ResultatCourse } from './resultat-course.model'; // Importez le modèle
+import { ResultatCourse } from './resultat-course.model';
 
 @Component({
   selector: 'app-resultats-course',
@@ -9,36 +8,40 @@ import { ResultatCourse } from './resultat-course.model'; // Importez le modèle
   styleUrls: ['./resultats-course.component.css']
 })
 export class ResultatsCourseComponent implements OnInit {
-  annee: number[] = []; // Initialisez avec un tableau vide
-  grandsPrix: string[] = []; // Initialisez avec un tableau vide
-  selectedAnnee: number = 2022; // Année sélectionnée par défaut
-  selectedGrandPrix: string = ''; // Grand Prix sélectionné par défaut
-  resultats: any[] = []; // Tableau pour stocker les résultats de course
+  annees: number[] = [];
+  grandsPrix: string[] = [];
+  selectedAnnee: number | null = null;
+  selectedGrandPrix: string | null = null;
+  resultats: ResultatCourse[] = [];
 
-  resultatCourse: ResultatCourse[] = []; // Utilisez le modèle pour stocker les résultats de course
-
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+    // Charger la liste des années disponibles
+    this.http.get<number[]>('http://localhost:3000/resultatscourse/annees').subscribe(data => {
+      this.annees = data;
+    });
 
- // Récupérez la liste des résultats de course depuis votre API Node.js
- this.http.get<ResultatCourse[]>('http://localhost:3000/resultatscourse').subscribe(data => {
-  this.resultatCourse = data;
-});
+    // Charger la liste des Grands Prix disponibles
+    this.http.get<string[]>('http://localhost:3000/resultatscourse/grandsprix').subscribe(data => {
+      this.grandsPrix = data;
+    });
+  }
 
-// Récupérez la liste des années et des Grands Prix depuis votre API Node.js
-this.http.get<number[]>('http://localhost:3000/resultatscourse/annees').subscribe(data => {
-  this.annee = data;
-});
-this.http.get<string[]>('http://localhost:3000/resultatscourse/grandsprix').subscribe(data => {
-  this.grandsPrix = data;
-});
+  onSubmit(): void {
+    // Vérifier si une année et un Grand Prix ont été sélectionnés
+    if (/*this.selectedAnnee === null ||*/ this.selectedGrandPrix === null) {
+      return;
+    }
 
- 
+    // Effectuer une requête pour obtenir les résultats en fonction de l'année et du Grand Prix sélectionnés
+    const params = new HttpParams()
+      //.set('annee', this.selectedAnnee.toString())
+      .set('nom_grand_prix', this.selectedGrandPrix);
+
+    this.http.get<ResultatCourse[]>('http://localhost:3000/resultatscourse', { params }).subscribe(data => {
+      this.resultats = data;
+    });
   }
 
   

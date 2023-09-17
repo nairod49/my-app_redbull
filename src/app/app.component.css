@@ -5,7 +5,8 @@
     padding: 10px 0; /* Espacement à l'intérieur de la barre de navigation (supprimez le padding horizontal) */
     text-align: center; /* Centre le texte à l'intérieur de la barre de navigation */
     margin: 34%;
-    margin-top: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
 
 }
   

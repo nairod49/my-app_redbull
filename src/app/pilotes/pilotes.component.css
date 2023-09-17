@@ -1,0 +1,68 @@
+/* pilote.component.css */
+
+/* Styles pour la section de la liste des pilotes */
+.pilote-list {
+    background-color: #1e2330;
+    padding: 40px;
+    color: #ffffff;
+    margin-top:-30%;
+
+  }
+  
+  /* Styles pour le titre de la liste des pilotes */
+  .pilote-list h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles pour chaque pilote dans la liste */
+  .pilote-list li {
+    background-color: #1d08080a;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles pour le nom du pilote */
+  .pilote-list h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ff0000; /* Couleur Red Bull */
+    
+  }
+  
+  /* Styles pour les détails du pilote */
+  .pilote-list p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles pour le titre du palmarès */
+  .pilote-list h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Styles pour chaque élément du palmarès */
+  .pilote-list ul li {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  
+  /* Styles pour les éléments du palmarès */
+  .pilote-list ul li p {
+    margin-bottom: 5px;
+  }
+  
+  /* Media query pour les écrans plus petits */
+  @media screen and (max-width: 768px) {
+    .pilote-list li {
+      width: calc(100% - 20px);
+    }
+  }
+  

@@ -30,7 +30,6 @@ router.get('/annees', async (req, res) => {
   try {
     // Utilisez la méthode distinct de MongoDB pour obtenir la liste des années disponibles
     const annees = await ResultatCourse.distinct('annee');
-    console.log(annees)
     res.status(200).json(annees);
   } catch (error) {
     console.error(error);
@@ -43,7 +42,6 @@ router.get('/grandsprix', async (req, res) => {
   try {
     // Utilisez la méthode distinct de Mongoose pour obtenir une liste unique des noms de Grand Prix
     const grandPrixList = await ResultatCourse.distinct('nom_grand_prix');
-    console.log(grandPrixList)
     if (grandPrixList.length === 0) {
       return res.status(404).json({ message: "Aucun Grand Prix trouvé." });
     }

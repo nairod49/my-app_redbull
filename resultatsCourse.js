@@ -9,6 +9,6 @@ const resultatCourseSchema = new mongoose.Schema({
   annee: Number
 });
 
-const ResultatCourse = mongoose.model('ResultatCourse', resultatCourseSchema);
+const ResultatCourse = mongoose.model('ResultatCourse', resultatCourseSchema, 'resultatscourse');
 
 module.exports = ResultatCourse;

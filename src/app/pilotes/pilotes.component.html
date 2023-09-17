@@ -1,1 +1,22 @@
-<p>pilotes works!</p>
+<!-- pilote.component.html -->
+
+<div class="pilote-list">
+    <h2>Liste des Pilotes</h2>
+    <ul>
+      <li *ngFor="let pilote of pilotes">
+        <h3>{{ pilote.nom }}</h3>
+        <p>Nationalité : {{ pilote.nationalite }}</p>
+        <p>Date de Naissance : {{ pilote.date_de_naissance }}</p>
+        <p>Équipe Actuelle : {{ pilote.equipe_actuelle }}</p>
+        <h4>Palmarès</h4>
+        <ul>
+          <li *ngFor="let palmares of pilote.palmares">
+            Année : {{ palmares.annee }} - Championnat : {{ palmares.championnat }}
+            <p>Victoires : {{ palmares.victoires }}</p>
+            <p>Podiums : {{ palmares.podiums }}</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
