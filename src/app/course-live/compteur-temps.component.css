@@ -5,14 +5,14 @@
   }
   
   .compteur-temps p {
-    font-size: 18px;
-    color: #333;
+    font-size: 56px;
+    color: #c5c1c1;
   }
   
   .compteur-temps .temps-restant {
-    font-size: 32px;
+    font-size: 64px;
     font-weight: bold;
-    color: #FF5733;
+    color: #b91212;
   }
   
 

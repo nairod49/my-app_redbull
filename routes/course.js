@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const GrandPrix = require('../grandprix'); 
+const { nodeModuleNameResolver } = require('typescript');
 
 router.get('/', async (req, res) => {
     try {
@@ -34,5 +35,18 @@ router.get('/debut-grand-prix-en-cours', async (req, res) => {
     res.status(500).json({ message: "Une erreur s'est produite lors de la récupération du Grand Prix en cours." });
   }
 });
+
+router.get('/nom',async (req, res)=>{
+  try{
+    const nom = await GrandPrix.distinct('nom')
+    if (!nodeModuleNameResolver) {
+      return res.status(404).json({ message: "Aucun Grand Prix en cours n'a été trouvé." });
+    }
+    res.status(200).json({ nom });
+   } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Une erreur s'est produite lors de la récupération du Grand Prix en cours." });
+    }
+  });
 
 module.exports = router;

@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CompteurTempsComponent implements OnInit {
   tempsRestant: string = '';
-
+  nomGrandPrix: string = '';
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -28,6 +28,11 @@ export class CompteurTempsComponent implements OnInit {
 
         } 
       });
+      this.http.get<{nom : string}>('http://localhost:3000/grandprix/nom')
+      .subscribe(response =>{
+        this.nomGrandPrix = response.nom;
+        console.log(this.nomGrandPrix);
+      })
   }
   updateCountdown():void{
     this.http.get<{ dateDebut: string }>('http://localhost:3000/grandprix/debut-grand-prix-en-cours')
