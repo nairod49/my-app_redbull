@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors'); 
 const ResultatCourse = require('./resultatsCourse.js');
+const Classement = require('./classement.js');
+
 
 // Connexion à la base de données MongoDB
 mongoose.connect('mongodb+srv://dorian1letort:1fJLQIHsfxtpoIlH@cluster0.jl8brse.mongodb.net/base_de_donne?retryWrites=true&w=majority',
@@ -55,6 +57,12 @@ app.use('/resultatscourse', resultatCourseRouter);
 
 const pilotesRoutes = require('./routes/pilotes.js');
 app.use('/pilotes', pilotesRoutes);
+
+const grandPrix = require('./routes/course.js');
+app.use('/grandprix',grandPrix );
+
+const classement = require('./routes/classement.js');
+app.use('/classement',classement );
 
 // Démarrage du serveur
 app.listen(port, () => {

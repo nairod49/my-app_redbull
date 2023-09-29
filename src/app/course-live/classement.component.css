@@ -1,0 +1,47 @@
+/* classement-temps-reel.component.css */
+
+.classement-temps-reel {
+    font-size: 18px;
+    text-align: center;
+    margin-top: -33%;
+  }
+  
+  .classement-temps-reel h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .tableau-classement {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .tableau-classement th,
+  .tableau-classement td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tableau-classement th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+ 
+  .tableau-classement tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .tableau-classement tr:hover {
+    background-color: #ddd;
+  }
+  
+
+  

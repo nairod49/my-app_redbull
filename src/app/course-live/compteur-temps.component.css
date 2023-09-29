@@ -1,0 +1,21 @@
+/* compteur-temps.component.css */
+
+.compteur-temps {
+    font-size: 24px;
+    text-align: center;
+    margin-top: -30%;
+  }
+  
+  .compteur-temps p {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .compteur-temps .temps-restant {
+    font-size: 32px;
+    font-weight: bold;
+    color: #FF5733; /* Couleur d'accentuation */
+  }
+  
+
+  

@@ -9,7 +9,8 @@ import { CourseLiveComponent } from './course-live/course-live.component';
 import { PilotesComponent } from './pilotes/pilotes.component';
 import { ResultatsCourseComponent } from './resultats-course/resultats-course.component';
 import { FormsModule } from '@angular/forms';
-
+import { CompteurTempsComponent } from './course-live/compteur-temps.component';
+import { ClassementComponent} from './course-live/classement.component';
 
 const routes: Routes = [
   { path: 'courselive', component: CourseLiveComponent },
@@ -23,7 +24,9 @@ const routes: Routes = [
     AppComponent,
     AccueilComponent,
     CourseLiveComponent,
-    PilotesComponent,
+    PilotesComponent,  
+    CompteurTempsComponent,
+    ClassementComponent,
     ResultatsCourseComponent
   ],
   imports: [

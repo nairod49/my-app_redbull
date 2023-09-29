@@ -1,0 +1,32 @@
+<!-- classement-temps-reel.component.html -->
+<div class="classement-temps-reel">
+    <h3>Classement en temps réel</h3>
+    <!-- Tableau du classement -->
+    <table class="tableau-classement">
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Pilote</th>
+          <th>Écurie</th>
+          <th>Temps</th>
+          <th>Ecart</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Boucle pour afficher les lignes du classement -->
+        <tr *ngFor="let classement of classement">
+          <td>{{ classement.position }}</td>
+          <td>{{ classement.nom }}</td>
+          <td>{{ classement.ecurie }}</td>
+          <td>{{ classement.temps }}</td>
+          <td>{{ classement.ecart}}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Style de la carte de la course -->
+    <div class="carte-course">
+      <!-- Contenu de la carte de la course ici (à personnaliser) -->
+    </div>
+  </div>
+  
