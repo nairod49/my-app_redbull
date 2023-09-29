@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const ResultatCourse = require('../resultatsCourse.js'); // Assurez-vous que le chemin du modèle est correct
+const ResultatCourse = require('../resultatsCourse.js');
 
 // Route pour obtenir les résultats de course en fonction de l'année et du grand prix
 router.get('/', async (req, res) => {
   try {
-    const { annee, grandPrix } = req.query; // Récupérer les paramètres de requête
+    const { annee, grandPrix } = req.query; 
 
     // Vérifier si les paramètres de requête sont présents
     if (!annee || !grandPrix) {
@@ -28,7 +28,6 @@ router.get('/', async (req, res) => {
 
 router.get('/annees', async (req, res) => {
   try {
-    // Utilisez la méthode distinct de MongoDB pour obtenir la liste des années disponibles
     const annees = await ResultatCourse.distinct('annee');
     res.status(200).json(annees);
   } catch (error) {
@@ -40,7 +39,6 @@ router.get('/annees', async (req, res) => {
 // Route pour obtenir la liste des Grand Prix disponibles
 router.get('/grandsprix', async (req, res) => {
   try {
-    // Utilisez la méthode distinct de Mongoose pour obtenir une liste unique des noms de Grand Prix
     const grandPrixList = await ResultatCourse.distinct('nom_grand_prix');
     if (grandPrixList.length === 0) {
       return res.status(404).json({ message: "Aucun Grand Prix trouvé." });

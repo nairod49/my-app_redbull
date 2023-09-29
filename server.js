@@ -42,8 +42,6 @@ app.get('/resultatscourse', async (req, res) => {
     if (resultats.length === 0) {
       return res.status(404).json({ message: "Aucun résultat trouvé pour ces critères." });
     }
-
-    // Renvoyez les résultats en tant que réponse JSON.
     res.json(resultats);
   } catch (error) {
     console.error(error);

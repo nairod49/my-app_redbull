@@ -1,4 +1,4 @@
-const Classement = require('./src/app/course-live/classement.model'); // Assurez-vous que le chemin est correct
+const Classement = require('./src/app/course-live/classement.model'); 
 const mongoose = require('mongoose');
 
 // Connexion à la base de données MongoDB
@@ -14,7 +14,7 @@ db.once('open', () => {
   console.log('Connecté à MongoDB.');
   async function updateClassement() {
     try {
-      // Logique de mise à jour du classement fictif
+      //mise à jour du classement fictif
       const nouveauClassement = [
         { position: 1, nom: 'Pilote 1', ecurie: 'Écurie A', temps: '1:30:00', ecart: '0' },
   { position: 2, nom: 'Pilote 2', ecurie: 'Écurie B', temps: '1:30:10', ecart: '+10s' },
@@ -36,7 +36,6 @@ db.once('open', () => {
   { position: 18, nom: 'Pilote 18', ecurie: 'Écurie R', temps: '1:34:30', ecart: '+4m 30s' },
   { position: 19, nom: 'Pilote 19', ecurie: 'Écurie S', temps: '1:34:45', ecart: '+4m 45s' },
   { position: 20, nom: 'Pilote 20', ecurie: 'Écurie T', temps: '1:35:00', ecart: '+5m' },
-  // Ajoutez autant de pilotes que nécessaire
 ];
       
   
@@ -54,7 +53,7 @@ db.once('open', () => {
   // Démarrez la simulation de course avec un intervalle de 5 secondes (par exemple)
   const interval = setInterval(updateClassement, 5000); // Mettez à jour toutes les 5 secondes
 
-  // Arrêtez la simulation après un certain temps (par exemple, 1 minute)
+  // Arrêtez la simulation 
   setTimeout(() => {
     clearInterval(interval); // Arrêtez la simulation
     console.log('Simulation de course terminée.');

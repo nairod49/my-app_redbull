@@ -1,5 +1,3 @@
-  // pilotes.model.ts
-  
   export interface Pilotes {
     _id: string;
     nom: string;

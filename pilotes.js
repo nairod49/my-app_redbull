@@ -1,4 +1,3 @@
-// pilote.model.ts
 const mongoose = require('mongoose');
 
 const piloteSchema = new mongoose.Schema({

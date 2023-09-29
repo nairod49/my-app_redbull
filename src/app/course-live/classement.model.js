@@ -14,11 +14,11 @@ const classementSchema = new mongoose.Schema({
     required: true,
   },
   temps: {
-    type: String, // Vous pouvez ajuster le type en fonction de la manière dont vous stockez le temps
+    type: String, 
     required: true,
   },
   ecart: {
-    type: String, // Vous pouvez ajuster le type en fonction de la manière dont vous stockez l'écart
+    type: String,
     required: true,
   },
 });

@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const GrandPrix = require('../grandprix'); // Assurez-vous d'utiliser le chemin correct
+const GrandPrix = require('../grandprix'); 
 
 router.get('/', async (req, res) => {
     try {
-      // Utilisez la méthode find de Mongoose pour récupérer tous les pilotes
+      
       const pilotes = await GrandPrix.find();
   
       res.status(200).json(pilotes);
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 // Route pour obtenir la date et l'heure de début du Grand Prix en cours
 router.get('/debut-grand-prix-en-cours', async (req, res) => {
   try {
-    // Recherchez le Grand Prix en cours en fonction de la date actuelle
+    
     const dateActuelle = new Date();
     const grandPrixEnCours = await GrandPrix.findOne({ dateDebut: { $gte: dateActuelle } })
       .sort('dateDebut')

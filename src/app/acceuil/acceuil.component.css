@@ -1,3 +1,89 @@
-.body{
-    background-image:"my-app\src\gettyimages-1443067353-612x612.jpg" ;
+body {
+    margin: 0; /* Réinitialisez la marge par défaut du corps */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% de la hauteur de la fenêtre */
+}
+
+h1 {
+    color: #afc9ee;
+    margin-top: -30%;
+    font-size: 70px;
+    font-family: Georgia, serif;
+    text-align: center;
+}
+
+.grid-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.grid-item {
+    width: calc(33.33% - 40px);
+    height: 300px;
+    padding: 20px;
+    margin: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+}
+
+.button-live {
+    background-image: url('src/assets/image_acceuil.jfif');
+}
+
+.button-past {
+    background-image: url('src/assets/image_acceuil_3.jfif');
+}
+
+.button-info {
+    background-image: url('src/assets/image_acceuil_2.jfif');
+}
+
+h2 {
+    font-family: Georgia, serif;
+    color: #000000;
+    font-size: 40px;
+}
+
+button {
+    display: block;
+    margin: 0 auto; 
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #d52b1e;
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b02018;
+}
+
+
+@media screen and (max-width: 768px) {
+    .grid-item {
+        width: calc(50% - 40px); 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .grid-item {
+        width: calc(100% - 40px);
+    }
 }

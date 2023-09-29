@@ -12,5 +12,16 @@ export class AccueilComponent {
   constructor(private router: Router) {
     this.title = 'Page d\'accueil';
   }
+  navigateToLiveResults() {
+    this.router.navigate(['/courselive']);
+  }
+
+  navigateToPastResults() {
+    this.router.navigate(['/resultatscourse']);
+  }
+
+  navigateToTeamInfo() {
+    this.router.navigate(['/pilotes']);
+  }
 
 }

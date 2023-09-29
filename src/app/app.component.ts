@@ -1,13 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   template: `
   <header class="header">
-  <div class="logo-container">
-    <img src="my-app\src\gettyimages-1443067353-612x612.jpg" class="logo" alt="Logo Red Bull" />
-  </div>
+ 
 </header>
 
 <nav class="navbar">

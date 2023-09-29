@@ -34,7 +34,7 @@ export class ResultatsCourseComponent implements OnInit {
       return;
     }
 
-    // Effectuer une requête pour obtenir les résultats en fonction de l'année et du Grand Prix sélectionnés
+    // obtenir les résultats en fonction de l'année et du Grand Prix sélectionnés
     const params = new HttpParams()
       //.set('annee', this.selectedAnnee.toString())
       .set('nom_grand_prix', this.selectedGrandPrix);

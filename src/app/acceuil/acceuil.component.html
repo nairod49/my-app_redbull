@@ -1,2 +1,16 @@
-<!-- app.component.html -->
-<body></body>
+<h1>Bienvenue sur l'application Red Bull</h1>
+
+<div class="grid-container">
+  <div class="grid-item button-live">
+    <h2>Course en direct</h2>
+    <button (click)="navigateToLiveResults()">Accéder</button>
+  </div>
+  <div class="grid-item button-info">
+    <h2>Nos Pilotes</h2>
+    <button (click)="navigateToTeamInfo()">Accéder</button>
+  </div>
+  <div class="grid-item button-past">
+    <h2>Dernière Course</h2>
+    <button (click)="navigateToPastResults()">Accéder</button>
+  </div>
+</div>

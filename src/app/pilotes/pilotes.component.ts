@@ -1,5 +1,3 @@
-// pilote.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pilotes } from './pilotes.model'; 

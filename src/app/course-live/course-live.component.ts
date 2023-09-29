@@ -1,4 +1,3 @@
-// course-live.component.ts
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,12 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-live.component.css']
 })
 export class CourseLiveComponent implements OnInit {
-  courseEnCours: boolean = false; // Initialisez à false par défaut
+  courseEnCours: boolean = false;
 
-  constructor() {}
 
   ngOnInit(): void {
-     // Supposons que vous ayez une date et une heure de début de course dans votre modèle
      const dateDebutCourse = new Date('2023-10-17T10:00:00'); // Remplacez par la date réelle
 
      // Obtenez la date et l'heure actuelles

@@ -1,7 +1,5 @@
-// compteur-temps.component.ts
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Date } from 'mongoose';
 
 @Component({
   selector: 'app-compteur-temps',
@@ -14,7 +12,7 @@ export class CompteurTempsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    // Faites une requête HTTP pour obtenir la date de début du Grand Prix en cours
+    // obtenir la date de début du Grand Prix en cours
     this.http.get<{ dateDebut: string }>('http://localhost:3000/grandprix/debut-grand-prix-en-cours')
       .subscribe(response => {
         const dateDebut = new Date(response.dateDebut).getTime();
