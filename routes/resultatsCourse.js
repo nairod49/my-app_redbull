@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     }
 
     // Rechercher les résultats en fonction de l'année et du grand prix
-    const resultats = await ResultatCourse.find({ annee: req.query.annee, grandPrix: req.query.grandPrix });
+    const resultats = await ResultatCourse.find({ annee: req.query.annee.toString, grandPrix: req.query.grandPrix.toString });
 
     if (resultats.length === 0) {
       return res.status(404).json({ message: "Aucun résultat trouvé pour ces critères." });
