@@ -37,7 +37,8 @@ app.get('/resultatscourse', async (req, res) => {
     }
 
     // Effectuez la recherche en fonction de l'année et du grand prix.
-    const resultats = await ResultatCourse.find({ nom_grand_prix: req.query.nom_grand_prix });
+    let query ={nom_grand_prix: req.query.nom_grand_prix.toString};
+    const resultats = await ResultatCourse.find(query);
     
     if (resultats.length === 0) {
       return res.status(404).json({ message: "Aucun résultat trouvé pour ces critères." });
